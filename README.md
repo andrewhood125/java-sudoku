@@ -1,6 +1,8 @@
 java-soduko
 ===========
 
+Current state: ComputerPlayer is incomplete and will crash. There is a bug transferring user input into a Move object and then onto the board which the x and y will get crossed. 
+
 Soduko written in Java.
 
 This version of Soduko is console based and has two playing methods. There is a NormalPlayer class that allows play as you would expect. There is a ComputerPlayer class that automatically solves the puzzle and you get to watch as it makes each move. 
