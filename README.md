@@ -24,14 +24,4 @@ Move.java -- This class is used to hold an x, y and data. Which correspond to a 
 
 gameBoard.su
 ============
-This file is holds the gameBoard the program loads. It is a comma delimited file where each row corresponds directly to a row on the board. Here is an example board:
-4,6,,3,,,2,,8
-,,7,,8,2,6,,9
-,,2,,6,,,4,1
-,,4,,7,,,,6
-,,,5,,6,,,
-6,,,,4,,9,,
-9,1,,,2,,3,,
-7,,8,9,3,,1,,
-3,,6,,,7,,9,5
-
+This file is holds the gameBoard the program loads. It is a comma delimited file where each row corresponds directly to a row on the board.
