@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class ComputerPlayer here.
+ * ComputerPlayer is a algorithm that solves a Sudoku puzzle through a series of moves. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Andrew Hood 
+ * @version 0.1
  */
 public class ComputerPlayer implements Player
 {
@@ -16,39 +16,61 @@ public class ComputerPlayer implements Player
     
     public Move nextMove()
     {
-        displayBoard();
-        // iterate through board. 
-        for(int i = 0; i < 9; i++)
-        {
-            for(int j = 0; j < 9; j++)
-            {
-                 // find empty space. 
-                if(board.isEmpty(i,j))
-                {
-                    // starting with 1 check all supporting structures. If none of them violate then that is a valid move
-                    for(int k = 1; k <= 9; j++)
-                    {
-                        // check if valid move
-                        Move tempMove = new Move(j,i,k);
-                        if(board.isMoveValid(tempMove))
-                        {
-                            // if that number is the only number that can go there
-                            // place the piece.
-                            if(board.isExclusiveMove(tempMove))
-                            {
-                                return tempMove;
-                            }
-                        }
-                        
-                        
-                         
-                    }
-                }
-            }
-        }
-       
-        
-        return new Move(1,1,1);
+    	displayBoard();
+    	// iterate through board. 
+    	for(int i = 0; i < 9; i++)
+    	{
+    		for(int j = 0; j < 9; j++)
+    		{
+    			// continue until an empty space is found
+    			if(board.isEmpty(i,j))
+    			{
+    				// iterate 1-9 possible values for the space
+    				for(int k = 1; k <= 9; k++)
+    				{
+    					Tile tempTile = board.getTile(i,j);
+    					Move tempMove = new Move(j,i,k);
+    					// check if k is a duplicate in support structures
+    					if(!tempTile.getQuad().hasDuplicate(tempMove) && 
+    					   !tempTile.getVert().hasDuplicate(tempMove) &&
+    					   !tempTile.getHoriz().hasDuplicate(tempMove))
+    					{
+    						// no duplicates found in support structures
+    						// make sure the move will not fit in any other
+    						// available space of the quadrant.
+    						boolean onlyIndex = true;
+    						Tile[] quadTiles = tempTile.getQuad().getTiles();
+    						for(int l = 0; l < quadTiles.length; l++)
+    						{
+    							// && onlyIndex so we don't keep checking if we know it won't work. 
+    							if(quadTiles[l].isEmpty() && quadTiles[l] != tempTile && onlyIndex)
+    							{
+    								if(!quadTiles[l].getHoriz().hasDuplicate(tempMove) && 
+    								   !quadTiles[l].getVert().hasDuplicate(tempMove))
+    								{
+    									// This index could possibly fit in another spot
+    									// of the quad therefor we need to iterate to next 
+    									// possible index. This move won't work.
+    									onlyIndex = false;
+    								}
+    							}
+    						}
+    						// all tiles have been checked if onlyIndex is still true
+    						// tempMove is the only move for that location. 
+    						if(onlyIndex)
+    						{
+    							System.out.println(tempMove);
+    							return tempMove;
+    						}
+    						// otherwise go back to k and increment
+    					}
+    				}
+    			}
+    		}
+    	}
+        System.err.println("No moves found.");
+        System.exit(1);
+        return new Move(0,0,1);
     }
     
     public void displayBoard()

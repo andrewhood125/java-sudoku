@@ -106,18 +106,6 @@ public class Gameboard
         }
     }
     
-    public boolean isExclusiveMove(Move m)
-    {
-        for(int i = 1; i <= 9; i++)
-        {
-            if(i != m.getData() && isMoveValid(new Move(m.getCol(), m.getRow(), i)))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-    
     public boolean isMoveValid(Move m)
     {
     	// Check if space is editable
@@ -207,17 +195,17 @@ public class Gameboard
         {
             if(quadrants[i].hasDuplicate())
             {
-            	System.err.println("Quadrant has duplicate.");
+            	// System.err.println("Quadrant has duplicate.");
                 return false;
             }
             if(verticals[i].hasDuplicate())
             {
-            	System.err.println("Vertical has duplicate.");
+            	// System.err.println("Vertical has duplicate.");
                 return false;
             }
             if(horizontals[i].hasDuplicate())
             {
-            	System.err.println("Horizontal has duplicate.");
+            	// System.err.println("Horizontal has duplicate.");
                 return false;
             }
         }
@@ -229,7 +217,7 @@ public class Gameboard
             {
                 if(tileGrid[i][j].isEmpty())
                 {
-                	System.err.println("Tile is empty.");
+                	// System.err.println("Tile is empty.");
                     return false;
                 }
             }
@@ -242,4 +230,10 @@ public class Gameboard
     {
         return tileGrid[i][j].isEmpty();
     }
+    
+    public Tile getTile(int i, int j)
+    {
+    	return tileGrid[i][j];
+    }
 }
+

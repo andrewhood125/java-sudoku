@@ -35,4 +35,27 @@ public class Vertical
         }
         return false;
     }
+    
+    public boolean hasDuplicate(Move tempMove)
+    {
+        int[] duplicates = new int[9];
+        duplicates[tempMove.getData()-1] = 1;
+        
+        for(int i = 0; i < tiles.length; i++)
+        {
+            Tile tile = tiles[i];
+            if(tile.getData() != 0)
+            {
+                int data = tile.getData();
+                if(duplicates[data-1] != 0)
+                {
+                    return true;
+                } else {
+                    duplicates[data-1] = data;
+                }
+            }
+            
+        }
+        return false;
+    }
 }
