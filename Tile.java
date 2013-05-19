@@ -5,42 +5,52 @@
  * @author Andrew Hood
  * @version 0.1
  */
-import java.util.regex.Pattern;
 
 
 public class Tile
 {
-    private String data;
+    private int data;
     private Quadrant owningQuad;
     private Vertical owningVertical;
     private Horizontal owningHorizontal;
+    private boolean isEditable;
     
     public Tile()
     {
-        data = "-";
+        data = 0;
         owningQuad = null;
         owningVertical = null;
         owningHorizontal = null;
+        isEditable = true;
     }
     
-    public void setData(String data)
+    public void setEditable(boolean isEditable)
     {
-        if(Pattern.matches("\\d", data))
-        {
-            this.data = data;
-        } else {
-            this.data = "-";
-        }
+    	this.isEditable = isEditable;
+    }
+    
+    public boolean isEditable()
+    {
+    	return isEditable;
+    }
+    
+    public void setData(String dataString)
+    {
+    	int data = Integer.parseInt(dataString);
+    	setData(data);
     }
     
     public void setData(int data)
     {
-        this.data = "" + data;
+    	if(data >= 1 && data <=9 && isEditable)
+    	{
+    		this.data = data;
+    	}
     }
     
     public boolean isOpen()
     {
-        if(data == "-")
+        if(data == 0)
         {
             return true;
         } else {
@@ -50,11 +60,11 @@ public class Tile
     
     public int getData()
     {
-        if(data == "-")
+        if(data == 0)
         {
             return 0;
         } else {
-            return Integer.parseInt(data);
+            return data;
         }
     }
     
@@ -90,15 +100,21 @@ public class Tile
     
     public boolean isEmpty()
     {
-        if(data == "-")
+        if(data == 0)
         {
             return true;
         } else {
             return false;
         }
     }
+    
     public String toString()
     {
-        return data;
+    	if(data == 0)
+    	{
+    		return "-";
+    	} else {
+    		return "" + data;
+    	}
     }
 }

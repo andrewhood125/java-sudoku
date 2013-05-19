@@ -7,7 +7,6 @@
  */
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Gameboard
@@ -40,8 +39,12 @@ public class Gameboard
                 for(int j = 0; j < col.length; j++)
                 {
                 
-                    tileGrid[i][j].setData(col[j]);
                     
+                    if(!col[j].equals("0"))
+                    {
+                    	tileGrid[i][j].setData(col[j]);
+                    	tileGrid[i][j].setEditable(false);
+                    }
                 }
                 i++;
             }
@@ -117,29 +120,12 @@ public class Gameboard
     
     public boolean isMoveValid(Move m)
     {
-        // check if the space is occupied
-        if(!tileGrid[m.getCol()][m.getRow()].isOpen())
-        {
-            return false;
-        }
+    	// Check if space is editable
+    	if(!tileGrid[m.getRow()][m.getCol()].isEditable())
+    	{
+    		return false;
+    	}
         
-        // Check quadrant
-        if(tileGrid[m.getCol()][m.getRow()].getQuad().hasDuplicate())
-        {
-            return false;
-        }
-        
-        // Check vertical
-        if(tileGrid[m.getCol()][m.getRow()].getVert().hasDuplicate())
-        {
-            return false;
-        }
-        
-        // Check Horizontal
-        if(tileGrid[m.getCol()][m.getRow()].getHoriz().hasDuplicate())
-        {
-            return false;
-        }
         return true;
     }
     
@@ -156,7 +142,7 @@ public class Gameboard
     
     public void placeMove(Move m)
     {
-        tileGrid[m.getCol()][m.getRow()].setData(m.getData());
+        tileGrid[m.getRow()][m.getCol()].setData(m.getData());
     }
     
     public void initializeQuadrants()
@@ -221,14 +207,17 @@ public class Gameboard
         {
             if(quadrants[i].hasDuplicate())
             {
+            	System.err.println("Quadrant has duplicate.");
                 return false;
             }
             if(verticals[i].hasDuplicate())
             {
+            	System.err.println("Vertical has duplicate.");
                 return false;
             }
             if(horizontals[i].hasDuplicate())
             {
+            	System.err.println("Horizontal has duplicate.");
                 return false;
             }
         }
@@ -240,6 +229,7 @@ public class Gameboard
             {
                 if(tileGrid[i][j].isEmpty())
                 {
+                	System.err.println("Tile is empty.");
                     return false;
                 }
             }

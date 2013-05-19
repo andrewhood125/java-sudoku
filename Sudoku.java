@@ -19,7 +19,7 @@ public class Sudoku
             {
                 board.placeMove(tempMove);
             } else {
-                System.err.println("The move: " + tempMove + " + is invalid.");
+                System.err.println("The move: " + tempMove + " is invalid.");
             }
         }
         System.out.println("You won!");

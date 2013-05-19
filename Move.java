@@ -7,14 +7,14 @@
  */
 public class Move
 {
+	private int col;
     private int row;
-    private int col;
     private int data;
     
-    public Move(int row, int col, int data)
+    public Move(int col, int row, int data)
     {
-        this.row = row;
         this.col = col;
+        this.row = row;
         this.data = data;
     }
     

@@ -23,10 +23,10 @@ public class NormalPlayer implements Player
         Scanner s = new Scanner(System.in);
         int row, col, data;
         displayBoard();
-        System.out.print("Row: ");
-        row = s.nextInt();
         System.out.print("Col: ");
         col = s.nextInt();
+        System.out.print("Row: ");
+        row = s.nextInt();
         System.out.print("Number: ");
         data = s.nextInt();
         return new Move(col, row, data);
