@@ -1,7 +1,7 @@
 java-soduko
 ===========
 
-Current state: ComputerPlayer is incomplete and will crash. There is a bug transferring user input into a Move object and then onto the board which the x and y will get crossed. 
+Current state: Complete. ComputerPlayer can be optimized and may not finish on hard puzzles. 
 
 Soduko written in Java.
 
