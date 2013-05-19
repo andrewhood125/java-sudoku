@@ -9,8 +9,8 @@ This version of Soduko is console based and has two playing methods. There is a 
 
 Getting Started
 ===============
-1. javac Soduko.java
-2. java Soduko
+1. ````javac Soduko.java````
+2. ````java Soduko````
 
 
 Class Descriptions
@@ -27,3 +27,16 @@ Move.java -- This class is used to hold an x, y and data. Which correspond to a 
 gameBoard.su
 ============
 This file is holds the gameBoard the program loads. It is a comma delimited file where each row corresponds directly to a row on the board.
+
+Solver Methodology
+==================
+
+The actual code can be found in ComputerPlayer::nextMove(). Here is the psuedo code. 
+
+
+1. Iterate through all tiles. 
+2. Check if tile is open. 
+3. If open iterate 1 - 9 possible values for that tile. 
+4. Check if placing that move would create a duplicate in it's quadrant, horizontal or vertical.
+5. If no duplicates exist check if this tile is only location where this index can be put. 
+6. Place move. 
