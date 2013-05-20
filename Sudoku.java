@@ -11,7 +11,7 @@ public class Sudoku
     {
         Gameboard board = new Gameboard();
         board.loadSudoku();
-        Player player = new ComputerPlayer(board);
+        Player player = new NormalPlayer(board);
         while(!board.isComplete())
         {
             Move tempMove = player.nextMove();

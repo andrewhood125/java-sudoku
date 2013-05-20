@@ -6,6 +6,7 @@
  * @version (a version number or a date)
  */
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -21,14 +22,52 @@ public class NormalPlayer implements Player
     public Move nextMove()
     {
         Scanner s = new Scanner(System.in);
-        int row, col, data;
+        int row = 0, col = 0, data = 0;
+        boolean badInput = true;
         displayBoard();
-        System.out.print("Col: ");
-        col = s.nextInt();
-        System.out.print("Row: ");
-        row = s.nextInt();
-        System.out.print("Number: ");
-        data = s.nextInt();
+       
+        do
+        {
+        	System.out.print("Col: ");
+        	try
+        	{
+        		col = s.nextInt();
+        		badInput = false;
+        	} catch (InputMismatchException ex) {
+        		System.err.println("Input Mismatch.");
+        		s.nextLine();
+        		badInput = true;
+        	}
+        } while(badInput);
+        
+        do
+        {
+        	System.out.print("Row: ");
+        	try
+        	{
+        		row = s.nextInt();
+        		badInput = false;
+        	} catch (InputMismatchException ex) {
+        		System.err.println("Input Mismatch.");
+        		s.nextLine();
+        		badInput = true;
+        	}
+        } while(badInput);
+        
+        do
+        {
+        	System.out.print("Number: ");
+        	try
+        	{
+        		data = s.nextInt();
+        		badInput = false;
+        	} catch (InputMismatchException ex) {
+        		System.err.println("Input Mismatch.");
+        		s.nextLine();
+        		badInput = true;
+        	}
+        } while(badInput);
+        
         return new Move(col, row, data);
     }
     
