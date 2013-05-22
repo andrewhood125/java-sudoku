@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class Gameboard
 {
     private Tile[][] tileGrid = new Tile[9][9];
-    private Quadrant[] quadrants = new Quadrant[9];
-    private Vertical[] verticals = new Vertical[9];
-    private Horizontal[] horizontals = new Horizontal[9];
+    private Support[] quadrants = new Quadrant[9];
+    private Support[] verticals = new Vertical[9];
+    private Support[] horizontals = new Horizontal[9];
     
     public Gameboard()
     {

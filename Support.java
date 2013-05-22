@@ -20,6 +20,11 @@ public abstract class Support
         tiles[i] = newTile;
     }
     
+    public Tile[] getTiles()
+    {
+    	return tiles;
+    }
+    
     public boolean hasDuplicate()
     {
         int[] duplicates = new int[9];

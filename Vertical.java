@@ -6,4 +6,4 @@
  * @author Andrew Hood 
  * @version 0.1
  */
-public class Vertical { }
+public class Vertical extends Support { }

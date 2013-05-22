@@ -10,9 +10,9 @@
 public class Tile
 {
     private int data;
-    private Quadrant owningQuad;
-    private Vertical owningVertical;
-    private Horizontal owningHorizontal;
+    private Support owningQuad;
+    private Support owningVertical;
+    private Support owningHorizontal;
     private boolean isEditable;
     
     public Tile()
@@ -68,32 +68,32 @@ public class Tile
         }
     }
     
-    public Quadrant getQuad()
+    public Support getQuad()
     {
         return owningQuad;
     }
     
-    public Vertical getVert()
+    public Support getVert()
     {
         return owningVertical;
     }
     
-    public Horizontal getHoriz()
+    public Support getHoriz()
     {
         return owningHorizontal;
     }
     
-    public void setOwningQuadrant(Quadrant owningQuad)
+    public void setOwningQuadrant(Support owningQuad)
     {
         this.owningQuad = owningQuad;
     }
     
-    public void setOwningVertical(Vertical owningVertical)
+    public void setOwningVertical(Support owningVertical)
     {
         this.owningVertical = owningVertical;
     }
     
-    public void setOwningHorizontal(Horizontal owningHorizontal)
+    public void setOwningHorizontal(Support owningHorizontal)
     {
         this.owningHorizontal = owningHorizontal;
     }
