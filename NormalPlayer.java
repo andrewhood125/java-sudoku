@@ -38,7 +38,7 @@ public class NormalPlayer extends Player
         		s.nextLine();
         		badInput = true;
         	}
-        } while(badInput);
+        } while(badInput || col < 0 || col > 8);
         
         do
         {
@@ -52,7 +52,7 @@ public class NormalPlayer extends Player
         		s.nextLine();
         		badInput = true;
         	}
-        } while(badInput);
+        } while(badInput || row < 0 || row > 8);
         
         do
         {
@@ -66,7 +66,7 @@ public class NormalPlayer extends Player
         		s.nextLine();
         		badInput = true;
         	}
-        } while(badInput);
+        } while(badInput || data < 1 || data > 9);
         
         return new Move(col, row, data);
     }
