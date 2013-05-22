@@ -1,9 +1,13 @@
 
 /**
- * Write a description of class Gameboard here.
+ * Gameboard holds is an object that stores all references 
+ * to required components. The grid of tiles that makes up
+ * the gameboard. Also the supporting objects horizontals
+ * verticals and quadrants that the 9x9 gamebaord can be 
+ * broken up into. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Andrew Hood 
+ * @version 0.1
  */
 
 import java.io.File;

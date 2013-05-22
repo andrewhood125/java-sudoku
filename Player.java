@@ -1,11 +1,29 @@
 
 /**
- * Write a description of interface Player here.
+ * This Abstract class provides a schema that all players
+ * adhere to. They need a nextMove() method which they can
+ * determine. The thought process for doing this is to provide
+ * multiple game play modes. Right now this allows for a 
+ * Sudoku solver and also a single player style. In the future
+ * it could also provide a helper player which could provide 
+ * hints if the user gets stuck. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Andrew Hood
+ * @version 0.1
  */
-public interface Player
+public abstract class Player
 {
-    Move nextMove();
+	private Gameboard board;
+	
+	public Player(Gameboard board)
+	{
+		this.board = board;
+	}
+	
+    abstract Move nextMove();
+    
+    public void displayBoard()
+    {
+        System.out.println(board);
+    }
 }

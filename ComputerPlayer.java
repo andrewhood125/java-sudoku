@@ -1,17 +1,18 @@
 
 /**
- * ComputerPlayer is a algorithm that solves a Sudoku puzzle through a series of moves. 
+ * ComputerPlayer is a algorithm that solves
+ * a Sudoku puzzle through a series of moves. 
  * 
  * @author Andrew Hood 
  * @version 0.1
  */
-public class ComputerPlayer implements Player
+public class ComputerPlayer extends Player
 {
     private Gameboard board;
     
     public ComputerPlayer(Gameboard board)
     {
-        this.board = board;
+        super(board);
     }
     
     public Move nextMove()
@@ -71,10 +72,5 @@ public class ComputerPlayer implements Player
         System.err.println("No moves found.");
         System.exit(1);
         return new Move(0,0,1);
-    }
-    
-    public void displayBoard()
-    {
-        System.out.println(board);
     }
 }

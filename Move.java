@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class Move here.
+ * A Move is a helper class that holds three pieces of data
+ * The x and y of the tile and also the number to be placed 
+ * at that location. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Andrew Hood 
+ * @version 0.1
  */
 public class Move
 {

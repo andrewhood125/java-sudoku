@@ -18,15 +18,29 @@ Class Descriptions
 
 Soduko.java -- This class holds the main method which jump starts the game. It creates a new instance of Gameboard and Player (NormalPlayer, Computer Player) it then enters the main game loop which will continue until the gameboard is filled and it passes a few checks confirming that board is correct. 
 
+Tile.java -- Is a single location on the board and holds a 1-9 or possibly empty. 
+
 Gameboard.java -- This class allows interaction with the board a 9x9 grid of Tiles. It has a two dimensional array of Tiles that form the actual gameboard. It also uses support structures: Quadrant, Vertical and Horizontal. The support structures form the nine vertical collumns, horizontal rows and 3x3 grids in the 9x9 gameboard. It has several methods used to interact with the board.  
 
-Player.java -- This class is an interfact that NormalPlayer and ComputerPlayer implement in order to be used in the game. It forces any class that implements to override the required methods needed to play the game. 
+Player.java -- This class is abstract. NormalPlayer and ComputerPlayer extend it in order to be used in the game. It forces any class that extends it to override the required methods needed to play the game. 
+
+ComputerPlayer.java -- Extends Player and provides its own nextMove() method that solves the puzzle.
+
+NormalPlayer.java -- Extends the Player and provides a nextMove() methods that takes input from the command line to play the game. 
 
 Move.java -- This class is used to hold an x, y and data. Which correspond to a row, collumn and that number 1-9 that you put at that location. The Move is passed as one object to make it simpler to validate.
 
+Support.java -- Is a helper class that holds nine tiles and can perform checks on those tiles including checking for a duplicate. A Sudoku board must meet certain criteria and three support objects are user Quadrant, Horizontal and Vertical well all identical these classes are loaded with different tiles. Support has all the guts for those classes. 
+
+Quadrant.java -- Extends Support.
+
+Vertical.java -- Extends Support.
+
+Horizontal.java -- Extends Support.
+
 gameBoard.su
 ============
-This file is holds the gameBoard the program loads. It is a comma delimited file where each row corresponds directly to a row on the board.
+This file holds the gameBoard the program loads. It is a comma delimited file where each row corresponds directly to a row on the board.
 
 Solver Methodology
 ==================

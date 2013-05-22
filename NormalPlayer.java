@@ -1,24 +1,24 @@
 
 /**
- * Write a description of class NormalPlayer here.
+ * Normal Player prompts a user to enter a 
+ * row, column and number for each move. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Andrew Hood
+ * @version 0.1
  */
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class NormalPlayer implements Player
+public class NormalPlayer extends Player
 {
-    private Gameboard board;
-    
-    public NormalPlayer(Gameboard board)
-    {
-        this.board = board;
-    }
-    
+	
+	public NormalPlayer(Gameboard board)
+	{
+		super(board);
+	}
+	
     public Move nextMove()
     {
         Scanner s = new Scanner(System.in);
@@ -71,8 +71,5 @@ public class NormalPlayer implements Player
         return new Move(col, row, data);
     }
     
-    public void displayBoard()
-    {
-        System.out.println(board);
-    }
+    
 }

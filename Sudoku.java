@@ -3,16 +3,20 @@ import java.util.Scanner;
 
 
 /**
- * Write a description of class Sudoku here.
+ * Sudoku is the entry point for the game. It 
+ * has the main game loop and some simple menu stuff.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Andrew Hood
+ * @version 0.1
  */
 public class Sudoku
 {
     public static void main(String[] args)
     {
+    	// Make a new board
         Gameboard board = new Gameboard();
+        
+        // load the Sudoku board 
         board.loadSudoku();
         
         System.out.println("#################################");
@@ -35,9 +39,10 @@ public class Sudoku
         		badInput = true;
         		input.nextLine();
         	}
-        	
+        // keep prompting for 1 or 2 until either is selected. 
         } while(badInput || whichType < 1 || whichType > 2);
         
+        // Instantiate a player. 
         Player player = null;
         if(whichType == 1)
         {
@@ -48,7 +53,7 @@ public class Sudoku
         	System.exit(1);
         }
         
-        
+        // The main game loop
         while(!board.isComplete())
         {
             Move tempMove = player.nextMove();
