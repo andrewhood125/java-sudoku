@@ -1,24 +1,28 @@
-java-soduko
+java-sudoku
 ===========
 
 Current state: Complete. ComputerPlayer can be optimized and may not finish on hard puzzles. 
 
 ToDO: Check bounds on NormalPlayer input
 
-Soduko written in Java.
+Sudoku written in Java.
 
-This version of Soduko is console based and has two playing methods. There is a NormalPlayer class that allows play as you would expect. There is a ComputerPlayer class that automatically solves the puzzle and you get to watch as it makes each move. 
+This version of sudoku is console based and has two playing methods. There is a NormalPlayer class that allows play as you would expect. There is a ComputerPlayer class that automatically solves the puzzle and you get to watch as it makes each move. 
 
 Getting Started
 ===============
-1. ````javac Soduko.java````
-2. ````java Soduko````
+1. ````java -jar Sudoku.jar````
+
+or
+
+1. ````javac Sudoku.java````
+2. ````java Sudoku````
 
 
 Class Descriptions
 ==================
 
-Soduko.java -- This class holds the main method which jump starts the game. It creates a new instance of Gameboard and Player (NormalPlayer, Computer Player) it then enters the main game loop which will continue until the gameboard is filled and it passes a few checks confirming that board is correct. 
+Sudoku.java -- This class holds the main method which jump starts the game. It creates a new instance of Gameboard and Player (NormalPlayer, Computer Player) it then enters the main game loop which will continue until the gameboard is filled and it passes a few checks confirming that board is correct. 
 
 Tile.java -- Is a single location on the board and holds a 1-9 or possibly empty. 
 
