@@ -3,6 +3,8 @@ java-soduko
 
 Current state: Complete. ComputerPlayer can be optimized and may not finish on hard puzzles. 
 
+ToDO: Check bounds on NormalPlayer input
+
 Soduko written in Java.
 
 This version of Soduko is console based and has two playing methods. There is a NormalPlayer class that allows play as you would expect. There is a ComputerPlayer class that automatically solves the puzzle and you get to watch as it makes each move. 

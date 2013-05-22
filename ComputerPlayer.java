@@ -8,7 +8,6 @@
  */
 public class ComputerPlayer extends Player
 {
-    private Gameboard board;
     
     public ComputerPlayer(Gameboard board)
     {

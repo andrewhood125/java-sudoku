@@ -31,7 +31,7 @@ public class Sudoku
         {
         	try 
         	{
-        		System.out.print("~$");
+        		System.out.print("~$ ");
         		whichType = input.nextInt();
         		badInput = false;
         	} catch (InputMismatchException ex) {

@@ -13,7 +13,7 @@
  */
 public abstract class Player
 {
-	private Gameboard board;
+	Gameboard board;
 	
 	public Player(Gameboard board)
 	{
