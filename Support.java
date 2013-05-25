@@ -11,7 +11,7 @@
  * @author Andrew Hood 
  * @version 0.1
  */
-public abstract class Support
+public class Support
 {	
 	private Tile[] tiles = new Tile[9];
     

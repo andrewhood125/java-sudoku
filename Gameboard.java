@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class Gameboard
 {
     private Tile[][] tileGrid = new Tile[9][9];
-    private Support[] quadrants = new Quadrant[9];
-    private Support[] verticals = new Vertical[9];
-    private Support[] horizontals = new Horizontal[9];
+    private Support[] quadrants = new Support[9];
+    private Support[] verticals = new Support[9];
+    private Support[] horizontals = new Support[9];
     
     public Gameboard()
     {
@@ -33,7 +33,7 @@ public class Gameboard
         // fill the tile grid
         try
         {
-            File board = new File("gameBoard.su");
+            File board = new File("boards/1.su");
             Scanner input = new Scanner(board);
             int i = 0;
             while(input.hasNext())
@@ -141,7 +141,7 @@ public class Gameboard
     {
         for(int i = 0; i < quadrants.length; i++)
         {
-            quadrants[i] = new Quadrant();
+            quadrants[i] = new Support();
         }
     }
     
@@ -149,7 +149,7 @@ public class Gameboard
     {
         for(int i = 0; i < verticals.length; i++)
         {
-            verticals[i] = new Vertical();
+            verticals[i] = new Support();
         }
     }
     
@@ -157,7 +157,7 @@ public class Gameboard
     {
         for(int i = 0; i < horizontals.length; i++)
         {
-            horizontals[i] = new Horizontal();
+            horizontals[i] = new Support();
         }
     }
         

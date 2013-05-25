@@ -34,17 +34,11 @@ NormalPlayer.java -- Extends the Player and provides a nextMove() methods that t
 
 Move.java -- This class is used to hold an x, y and data. Which correspond to a row, collumn and that number 1-9 that you put at that location. The Move is passed as one object to make it simpler to validate.
 
-Support.java -- Is a helper class that holds nine tiles and can perform checks on those tiles including checking for a duplicate. A Sudoku board must meet certain criteria and three support objects are user Quadrant, Horizontal and Vertical well all identical these classes are loaded with different tiles. Support has all the guts for those classes. 
+Support.java -- Is a helper class that holds nine tiles and can perform checks on those tiles including checking for a duplicate. A Sudoku board must meet certain criteria and three Support objects are used to represent them Quadrant, Horizontal and Vertical.
 
-Quadrant.java -- Extends Support.
-
-Vertical.java -- Extends Support.
-
-Horizontal.java -- Extends Support.
-
-gameBoard.su
+*.su
 ============
-This file holds the gameBoard the program loads. It is a comma delimited file where each row corresponds directly to a row on the board.
+These files hold the gameBoard the program loads. It is a comma delimited file where each row corresponds directly to a row on the board.
 
 Solver Methodology
 ==================
