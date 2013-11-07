@@ -9,9 +9,6 @@ This version of sudoku is console based and has two playing methods. There is a 
 
 Getting Started
 ===============
-1. ````java -jar Sudoku.jar````
-
-or
 
 1. ````javac Sudoku.java````
 2. ````java Sudoku````
