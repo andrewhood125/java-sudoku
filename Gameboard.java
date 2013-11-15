@@ -33,7 +33,7 @@ public class Gameboard
         // fill the tile grid
         try
         {
-            File board = new File("boards/2.su");
+            File board = new File("boards/1.su");
             Scanner input = new Scanner(board);
             int i = 0;
             while(input.hasNext())
